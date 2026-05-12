@@ -2,15 +2,16 @@ import random
 
 def get_a_number():
     while True:
-        n = input("Enter a number guesses that you want to play: ")
-        try:
-            return int(n)
-        except:
-            print("Please enter a valid number!")
+        num = input("Enter a number guesses that you want to play: ")
+        if chacks_number(num):
+            return int(num)
 
 
 def chacks_number(num):
-    pass
+    try:
+        return int(num)
+    except:
+        print("Please enter a valid number...")
 
 
 def hide_word(len):
