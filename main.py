@@ -14,7 +14,7 @@ def chacks_number(num):
 
 
 def hide_word(len):
-    pass
+    return "#" * len
 
 
 def get_a_letter():
@@ -34,7 +34,7 @@ def main():
 
     word_list = ["Bread", "Light", "Frame", "Storm", "Grape", "Cloud", "Point", "Match", "Brick", "Voice"]
 
-    current_word = word_list[random.randint(0, len(word_list))]
+    current_word = word_list[random.randint(0, len(word_list)-1)]
 
     hidden_word = hide_word(len(current_word))
 
@@ -45,6 +45,8 @@ def main():
 
     if guesses_times > 0:
         pass
+
+
 
 if __name__ == "__main__":
     main()
