@@ -27,7 +27,13 @@ def checks_alpha(letter):
 
 
 def show_status(inputed_letters, hidden_word, guess_times):
-    pass
+    print(f"""\n
+      ---- HERE IS YOUR STATUS FOR NOW ----
+    You already used this letters {inputed_letters}.
+          The hidden eord is: {hidden_word}.
+         Left you {guess_times} times to try.
+      ------------- GOOD LUCK -------------\n
+""")
 
 
 def main():
@@ -42,7 +48,7 @@ def main():
     inputed_letters = []
 
     while guesses_times > 0:
-        pass
+        show_status(inputed_letters, hidden_word, guesses_times)
 
     if guesses_times > 0:
         pass
