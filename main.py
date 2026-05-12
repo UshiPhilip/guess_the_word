@@ -19,11 +19,16 @@ def hide_word(len):
 
 
 def get_a_letter():
-    pass
+    while True:
+        char = input("Please guess one letter: ")
+        if checks_alpha(char):
+            return char
+        else:
+            print("You must enter ONE valid letter...")
 
 
 def checks_alpha(letter):
-    pass
+    return letter.isalpha() and letter.isascii() and (len(letter) == 1)
 
 
 def show_status(inputed_letters, hidden_word, guess_times):
@@ -49,6 +54,9 @@ def main():
 
     while guesses_times > 0:
         show_status(inputed_letters, hidden_word, guesses_times)
+        
+        users_guess = get_a_letter()
+
 
     if guesses_times > 0:
         pass
