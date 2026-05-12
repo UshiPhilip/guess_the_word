@@ -2,10 +2,11 @@ import random
 
 def get_a_number():
     while True:
-        n = input("Enter a number: ")
-        if chacks_number(n):
-            return n
-        print("Please enter a valid number!")
+        n = input("Enter a number guesses that you want to play: ")
+        try:
+            return int(n)
+        except:
+            print("Please enter a valid number!")
 
 
 def chacks_number(num):
