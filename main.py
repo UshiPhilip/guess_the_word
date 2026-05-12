@@ -68,13 +68,16 @@ def main():
             if hidden_word == current_word:
                 break
         else:
-            print("Don't give up!\nLet's try again...")
+            print("Don't give up!\n")
+            inputed_letters.append(users_guess)
             guesses_times -= 1
         
 
 
     if guesses_times > 0:
-        pass
+        print(f"Yayyyy!!!\nYou are a winner!!!\nThe word is {current_word}")
+    else:
+        print(f"Don't give up, maybe next time...\nThe hidden word was: {current_word}")
 
 
 
