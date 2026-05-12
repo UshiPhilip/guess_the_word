@@ -47,6 +47,7 @@ def main():
     word_list = ["Bread", "Light", "Frame", "Storm", "Grape", "Cloud", "Point", "Match", "Brick", "Voice"]
 
     current_word = word_list[random.randint(0, len(word_list)-1)]
+    print(current_word)
 
     hidden_word = hide_word(len(current_word))
 
@@ -54,8 +55,22 @@ def main():
 
     while guesses_times > 0:
         show_status(inputed_letters, hidden_word, guesses_times)
-        
+
         users_guess = get_a_letter()
+
+        if users_guess in current_word:
+            for i, v in enumerate(current_word):
+                if v == users_guess:
+                    tmp_word = list(hidden_word)
+                    tmp_word[i] = v
+                    hidden_word = "".join(tmp_word)
+                    break
+            if hidden_word == current_word:
+                break
+        else:
+            print("Don't give up!\nLet's try again...")
+            guesses_times -= 1
+        
 
 
     if guesses_times > 0:
