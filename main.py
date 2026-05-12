@@ -20,7 +20,9 @@ def hide_word(len):
 
 def get_a_letter():
     while True:
-        char = input("Please guess one letter: ")
+        char = input("Please guess one letter (or quit to exit): ")
+        if char == "quit":
+            exit()
         if checks_alpha(char):
             return char
         else:
@@ -44,10 +46,9 @@ def show_status(inputed_letters, hidden_word, guess_times):
 def main():
     guesses_times = get_a_number()
 
-    word_list = ["Bread", "Light", "Frame", "Storm", "Grape", "Cloud", "Point", "Match", "Brick", "Voice"]
+    word_list = ["bread", "light", "frame", "storm", "grape", "cloud", "point", "match", "brick", "voice"]
 
     current_word = word_list[random.randint(0, len(word_list)-1)]
-    print(current_word)
 
     hidden_word = hide_word(len(current_word))
 
