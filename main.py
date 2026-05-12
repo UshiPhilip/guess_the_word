@@ -1,7 +1,11 @@
 import random
 
 def get_a_number():
-    pass
+    while True:
+        n = input("Enter a number: ")
+        if chacks_number(n):
+            return n
+        print("Please enter a valid number!")
 
 
 def chacks_number(num):
@@ -27,7 +31,7 @@ def show_status(inputed_letters, hidden_word, guess_times):
 def main():
     guesses_times = get_a_number()
 
-    word_list = []
+    word_list = ["Bread", "Light", "Frame", "Storm", "Grape", "Cloud", "Point", "Match", "Brick", "Voice"]
 
     current_word = word_list[random.randint(0, len(word_list))]
 
